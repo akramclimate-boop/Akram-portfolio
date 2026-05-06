@@ -1,1 +1,170 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Photos Top Nav Sprites</title><style>body{font-family:sans-serif;background:#1e1e1e;color:#ccc;padding:24px}h1{font-size:16px;margin-bottom:24px}.grid{display:flex;flex-wrap:wrap;gap:32px}.icon-group{display:flex;flex-direction:column;align-items:center;gap:8px}.icon-row{display:flex;gap:12px;align-items:center}svg.icon{width:24px;height:24px;fill:#ffffff}svg.icon.colored{fill:none}label{font-size:var(--font-size-caption-2);color:#888;text-align:center}.variant-label{font-size:10px;color:#555}</style></head><body><h1>Photos Top Nav Icons</h1><div style="display:none"></div><div class="grid" id="icons"></div><script>const icons=["Sparkle24","Glance24","Album24","People24","Star24","Folder24","Search24"];fetch("topNav.sprite.svg").then(e=>e.text()).then(e=>{document.querySelector('div[style="display:none"]').innerHTML=e;const t=document.getElementById("icons");for(const e of icons){const n=document.createElement("div");n.className="icon-group";const o=document.createElement("div");o.className="icon-row";const c=[`${e}Regular`,`${e}Filled`,`${e}Colored`];for(const t of c){const n=document.getElementById(t);if(!n)continue;const c=document.createElement("div");c.style.display="flex",c.style.flexDirection="column",c.style.alignItems="center",c.style.gap="4px";const l=document.createElementNS("http://www.w3.org/2000/svg","svg");if(l.setAttribute("class",t.includes("Colored")?"icon colored":"icon"),l.setAttribute("viewBox","0 0 24 24"),t.includes("Colored")){const e=n.querySelector("defs");e&&l.appendChild(e.cloneNode(!0))}const s=document.createElementNS("http://www.w3.org/2000/svg","use");s.setAttribute("href",`#${t}`),l.appendChild(s);const d=document.createElement("span");d.className="variant-label",d.textContent=t.replace(e,""),c.appendChild(l),c.appendChild(d),o.appendChild(c)}const l=document.createElement("label");l.textContent=e.replace("24",""),n.appendChild(o),n.appendChild(l),t.appendChild(n)}})</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohammad Akram Hossain | Portfolio</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial, sans-serif;}
+body{line-height:1.6;background:#f8fafc;color:#0f172a}
+header{background:#0f172a;color:#fff;padding:20px;text-align:center}
+nav{margin-top:10px}
+nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:bold}
+section{max-width:1100px;margin:auto;padding:60px 20px}
+h2{margin-bottom:20px;color:#0f172a}
+.hero{background:#e2e8f0;text-align:center;padding:80px 20px}
+.profile-img{width:150px;height:150px;border-radius:50%;object-fit:cover;margin-bottom:20px;border:4px solid #fff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.card{background:#fff;padding:20px;border-radius:12px;box-shadow:0 4px 10px rgba(0,0,0,0.05)}
+ul{padding-left:20px}
+footer{background:#0f172a;color:#fff;text-align:center;padding:20px}
+.small{font-size:14px;color:#475569}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Mohammad Akram Hossain</h1>
+<p>Meteorological Assistant (BMD) | Data Analyst | GIS | RS & Climate Specialist</p>
+<nav>
+<a href="#about">About</a>
+<a href="#experience">Experience</a>
+<a href="#projects">Projects</a>
+<a href="#skills">Skills</a>
+<a href="#publications">Publications</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section class="hero">
+<img src="profile.jpg" alt="Profile Photo" class="profile-img">
+<h2>Hello 👋</h2>
+<p>I work on meteorological data analysis, climate research, GIS, Remote Sensing (RS), and numerical weather modeling.</p>
+</section>
+
+<section id="about">
+<h2>About Me</h2>
+<p>
+I am a Meteorological Assistant at the Bangladesh Meteorological Department since November 2004.
+My work focuses on weather data collection, satellite and radar data analysis, and forecasting.
+I specialize in processing and quality control of meteorological data using Python, FORTRAN, MATLAB, and SQL.
+</p>
+</section>
+
+<section id="experience">
+<h2>Professional Experience</h2>
+<div class="card">
+<p><strong>Bangladesh Meteorological Department</strong></p>
+<p class="small">Meteorological Assistant | Nov 2004 – Present</p>
+<ul>
+<li>Weather, satellite, and radar data collection and analysis</li>
+<li>Forecasting based on time and location-specific data</li>
+<li>Data quality control and processing</li>
+<li>Running numerical models: WRF, CPT</li>
+<li>Analyzing model outputs</li>
+</ul>
+</div>
+</section>
+
+<section id="education">
+<h2>Educational Qualifications</h2>
+<div class="card">
+<ul>
+<li>MS (Physics)</li>
+<li>M.Tech. (Remote Sensing & GIS), Andhra University (AU), India</li>
+<li>PGD (Remote Sensing & GIS), CSSTEAP (affiliated to UN), IIRS, India</li>
+<li>PhD (Fellow), Hydrology & Water Resources, China</li>
+</ul>
+</div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid">
+<div class="card">
+<h3>Weather Data QC Automation</h3>
+<p>Automated quality control system for meteorological observations.</p>
+<p class="small">Python, Pandas</p>
+</div>
+
+<div class="card">
+<h3>Hygrometric Table Validation</h3>
+<p>Humidity validation using hygrometric tables and error detection.</p>
+<p class="small">Python</p>
+</div>
+
+<div class="card">
+<h3>Pressure Correction System</h3>
+<p>Detection and correction of pressure inconsistencies in datasets.</p>
+<p class="small">Data Analysis</p>
+</div>
+</div>
+</section>
+
+<section id="skills">
+<h2>Technical Skills</h2>
+<div class="grid">
+<div class="card">
+<h3>Programming</h3>
+<ul>
+<li>Python</li>
+<li>FORTRAN</li>
+<li>MATLAB</li>
+<li>SQL</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Tools & Software</h3>
+<ul>
+<li>ArcGIS</li>
+<li>GrADS</li>
+<li>ENVI</li>
+<li>ERDAS</li>
+<li>Win Surfer</li>
+</ul>
+</div>
+
+<div class="card">
+<h3>Expertise</h3>
+<ul>
+<li>Data Analysis & QC</li>
+<li>Weather Forecasting</li>
+<li>GIS & Remote Sensing</li>
+<li>Numerical Modeling</li>
+</ul>
+</div>
+</div>
+</section>
+
+<section id="publications">
+<h2>Publications</h2>
+<div class="card">
+<ul>
+<li>Spatiotemporal changes of precipitation extremes in Bangladesh (2021)</li>
+<li>Detection of climatic trends in Bangladesh (2019)</li>
+<li>Heat Stress Index variation in Bangladesh (2021)</li>
+<li>Groundwater variation using GIS (2015)</li>
+<li>Urban Heat Assessment (2015)</li>
+<li>Climate Change effects on Rice Yield</li>
+<li>CO2 emission assessment study</li>
+<li>Thunderstorm characteristics study</li>
+</ul>
+</div>
+</section>
+
+<section id="contact">
+<h2>Contact</h2>
+<p><strong>Phone:</strong> +8801680274628</p>
+<p><strong>Email:</strong> akramclimate@gmail.com</p>
+<p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/mohammad-akram-hossain-508507240/" target="_blank">View Profile</a></p>
+</section>
+
+<footer>
+<p>© 2026 Mohammad Akram Hossain</p>
+</footer>
+
+</body>
+</html>
